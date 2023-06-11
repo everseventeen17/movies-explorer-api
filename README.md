@@ -2,7 +2,7 @@
 
 MoviesExplorer
 Сервис, в котором можно найти фильмы по запросу и сохранить в личном кабинете.
-ссылка на back-end http://movie1337.nomoredomains.rocks
+ссылка на back-end https://api.movie1337.nomoredomains.rocks
 
 часть 1 БЭКЕНД
 

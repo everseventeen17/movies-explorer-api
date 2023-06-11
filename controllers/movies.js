@@ -56,11 +56,11 @@ module.exports.deleteMovie = (req, res, next) => {
     .orFail()
     .then((card) => {
       if (card.owner.toString() === req.user._id) {
-        card.deleteOne();
-        res.send({ message: 'Фильм успешно удалён' });
-      } else {
-        throw new ForbiddenError('Вы не можете удалить чужую карточку');
+        return card.deleteOne()
+          .then(res.status(SUCCESS_CODE).send({ message: 'Фильм успешно удалён' }))
+          .catch((err) => next(err));
       }
+      throw new ForbiddenError('Вы не можете удалить чужую карточку');
     })
     .catch((err) => {
       if (err instanceof DocumentNotFoundError) {
