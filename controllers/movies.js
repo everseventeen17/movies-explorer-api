@@ -57,7 +57,9 @@ module.exports.deleteMovie = (req, res, next) => {
     .then((card) => {
       if (card.owner.toString() === req.user._id) {
         return card.deleteOne()
-          .then(res.status(SUCCESS_CODE).send({ message: 'Фильм успешно удалён' }))
+          .then(() => {
+            res.status(SUCCESS_CODE).send({ message: 'Фильм успешно удалён' });
+          })
           .catch((err) => next(err));
       }
       throw new ForbiddenError('Вы не можете удалить чужую карточку');
