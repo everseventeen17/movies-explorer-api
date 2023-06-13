@@ -1,0 +1,29 @@
+const BAD_REQUEST_ERROR_CODE = 400;
+const UNAUTHORIZED_ERROR_CODE = 401;
+const FORBIDDEN_ERROR_CODE = 403;
+const NOT_FOUND_ERROR_CODE = 404;
+const CONFLICT_ERROR_CODE = 409;
+const SUCCESS_CODE = 200;
+const SERVER_ERROR_CODE = 500;
+
+const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
+const ALLOWED_CORS = [
+  'http://movie1337.nomoredomains.rocks',
+  'https://movie1337.nomoredomains.rocks',
+  'http://51.250.82.167',
+  'https://51.250.82.167',
+  'http://localhost:3000',
+  'http://localhost:3001',
+];
+
+module.exports = {
+  SUCCESS_CODE,
+  BAD_REQUEST_ERROR_CODE,
+  UNAUTHORIZED_ERROR_CODE,
+  FORBIDDEN_ERROR_CODE,
+  NOT_FOUND_ERROR_CODE,
+  CONFLICT_ERROR_CODE,
+  SERVER_ERROR_CODE,
+  ALLOWED_CORS,
+  DEFAULT_ALLOWED_METHODS,
+};
